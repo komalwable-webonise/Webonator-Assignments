@@ -1,0 +1,98 @@
+Agile activity and assignment:
+
+Problem Statement: Plan New Year Party.
+Product Backlog:
+As we want to plan New year party First we have to decide Following things:
+•	Where is the party going to be ?
+•	How many people we are inviting?
+•	What type of party is it?(Lunch,dinner,buffet)
+•	What is the Theme for the party?
+•	What is the budget?
+User Stories:
+1.	Creating Guest List.
+2.	Deciding menus.
+3.	Decoration.
+4.	Selecting Venue.
+5.	Shopping Gifts for guests.
+6.	Ordering Cakes.
+7.	Give order to Photographer.
+Sprint 1:
+	Shopping-(15)
+		Tasks: 
+1.	Do shopping for decoration
+2.	Grocery shopping.
+3.	Gifts for guests.
+Sprint 2 -
+	Guest List:(10)
+		Tasks:
+1.	Creating guest list.
+2.	Send Invitations
+3.	Selecting Menus according to guests.
+
+
+Sprint 3-
+	Order To Photographer-(5)
+	Tasks:
+	1. Decide Budget For Photography from Overall Budget.
+		2. According to Budget select Photographer.
+		3.Send details To photographer (Date,Address).
+
+Sprint 4 –
+	Cooking for the guest:(20)
+		Tasks:
+1.	Set the kitchen clean.
+2.	Baking cakes.
+3.	Cut The Green Vegetables.
+
+Review And Retrospective:
+1.What went well-
+	Most of the Work done on time.
+2.What went badly-
+	We missed some of our guests. we should check guest list twice.
+
+
+
+
+
+
+Problem Statement:	Application for Mess Management.
+Product Backlog-
+1.	Our new website will allow customers to browse Menu, view availability and pricing, place orders and see their past order history.
+2.	This website is used to manage daily mess activities along with placing orders.
+3.	We have to decide How many Modules will be there?
+4.	Which programming language best suite for This Application?
+5.	Which data-Base  we can use?
+User Stories:
+
+6.	There are  three modules:
+•	Administrator Module
+
+•	User Module
+•	Cook Module
+
+Sprint 1:
+Administrator Module:(15)
+	Tasks:
+1.	Allow Customers to use the mess by checking registration form and accounts.
+2.	Handle cook login.
+3.	Admin can view all the feed-backs given by customers.
+4.	Decide prices for meals.
+Sprint 2:
+	User Module:(20)
+		Tasks:
+1.	User can able to fill registration form.
+2.	Give Feed-backs.
+3.	User can access their profile and other meal related data.
+Sprint 3:
+	Cook Module:(10)
+1.	Cook will display Today’s Menu.
+2.	Update availability of food.
+3.	Check feed-backs.
+
+
+Review And Retrospective:
+	1.What went well-
+		Most of the task we Performed on time. Application also working good.
+	2.What went badly-
+		we should add some more functionalities like online payment option 		through users account.
+
