@@ -89,3 +89,26 @@ Date:   Mon Nov 22 17:40:28 2021 +0530
 
 LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
 $
+ git branch develop
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git branch testing
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git branch staging
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (develop)
+$ git branch feature
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (develop)
+$ git checkout feature
+Switched to branch 'feature'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
