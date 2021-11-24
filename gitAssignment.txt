@@ -64,7 +64,7 @@ On branch master
 
 No commits yet
 
-Changes to be committed:
+Changes to be committed:git
   (use "git rm --cached <file>..." to unstage)
         new file:   Agile activity and assignment.txt
         new file:   gitAssignment.txt
