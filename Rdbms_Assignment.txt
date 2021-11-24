@@ -1,0 +1,278 @@
+
+
+RDBMS ASSIGNMENT :
+
+create database weboniselab;
+
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| books              |
+| information_schema |
+| learn              |
+| mysql              |
+| performance_schema |
+| practical          |
+| sakila             |
+| student            |
+| sys                |
+| weboniselab        |
+| world              |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> use weboniselab;
+Database changed
+
+mysql> show tables;
+Empty set (0.04 sec)
+
+mysql> Create table emp(emp_id int PRIMARY KEY,name varchar(25),age int,salary double);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> Insert Into emp Values(1,'Komal wable',21,3000000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert Into emp Values(2,'Mohit Vyavhare',22,1500000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> Insert Into emp Values(3,'Ayush Chothe',12,2000000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> Insert Into emp Values(4,'Shreya Kute',18,100000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> Insert Into emp Values(5,'Ketaki Bhosale',20,250000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> Insert Into emp Values(6,'Varada Jadhav',24,230000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> Insert Into emp Values(7,'Riddhi Karpe',17,150000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> Insert Into emp Values(8,'Riyansh Bhosale',23,2500000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into emp values(9,'shubham wable',22,15000000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into emp values(10,'Rahul kakade',27,3400000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select* from emp;
++--------+-----------------+------+----------+
+| emp_id | name            | age  | salary   |
++--------+-----------------+------+----------+
+|      1 | Komal wable     |   21 |  3000000 |
+|      2 | Mohit Vyavhare  |   22 | 15000000 |
+|      3 | Ayush Chothe    |   12 |  2000000 |
+|      4 | Shreya Kute     |   18 |   100000 |
+|      5 | Ketaki Bhosale  |   20 |   250000 |
+|      6 | Varada Jadhav   |   24 |   230000 |
+|      7 | Riddhi Karpe    |   17 |   150000 |
+|      8 | Riyansh Bhosale |   23 |  2500000 |
+|      9 | shubham wable   |   22 | 15000000 |
+|     10 | Rahul kakade    |   27 |  3400000 |
++--------+-----------------+------+----------+
+10 rows in set (0.00 sec)
+
+
+
+
+
+mysql> Create table dept(dept_id int PRIMARY KEY,d_name varchar(25),budget double,manager_id int REFERENCES emp(emp_id));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc dept;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| dept_id    | int         | NO   | PRI | NULL    |       |
+| d_name     | varchar(25) | YES  |     | NULL    |       |
+| budget     | double      | YES  |     | NULL    |       |
+| manager_id | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> Alter table dept ADD FOREIGN KEY (manager_id) REFERENCES emp(emp_id);
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc dept;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| dept_id    | int         | NO   | PRI | NULL    |       |
+| d_name     | varchar(25) | YES  |     | NULL    |       |
+| budget     | double      | YES  |     | NULL    |       |
+| manager_id | int         | YES  | MUL | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insert into dept values(101,'Hardware',23000000,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept values(102,'Software',11000000,2);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into dept values(103,'Testing',25000000,3);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select* from dept;
++---------+----------+----------+------------+
+| dept_id | d_name   | budget   | manager_id |
++---------+----------+----------+------------+
+|     101 | Hardware | 23000000 |          1 |
+|     102 | Software | 11000000 |          2 |
+|     103 | Testing  | 25000000 |          3 |
++---------+----------+----------+------------+
+3 rows in set (0.00 sec)
+
+
+
+
+mysql> create table works(emp_id int,dept_id int,pct_time int,FOREIGN KEY(emp_id) REFERENCES emp(emp_id),FOREIGN KEY(dept_id) REFERENCES dept(dept_id));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc works;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| emp_id   | int  | YES  | MUL | NULL    |       |
+| dept_id  | int  | YES  | MUL | NULL    |       |
+| pct_time | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
+mysql> insert into works values(4,101,80);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(4,102,20);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(5,101,30);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(5,102,50);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(5,103,20);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(6,101,100);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(7,101,60);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(7,103,40);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(8,102,50);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(8,103,50);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(9,101,25);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(9,102,75);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into works values(10,102,30);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(10,101,40);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into works values(10,103,30);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select* from works;
++--------+---------+----------+
+| emp_id | dept_id | pct_time |
++--------+---------+----------+
+|      4 |     101 |       80 |
+|      4 |     102 |       20 |
+|      5 |     101 |       30 |
+|      5 |     102 |       50 |
+|      5 |     103 |       20 |
+|      6 |     101 |      100 |
+|      7 |     101 |       60 |
+|      7 |     103 |       40 |
+|      8 |     102 |       50 |
+|      8 |     103 |       50 |
+|      9 |     101 |       25 |
+|      9 |     102 |       75 |
+|     10 |     102 |       30 |
+|     10 |     101 |       40 |
+|     10 |     103 |       30 |
++--------+---------+----------+
+15 rows in set (0.00 sec)
+ 
+ 
+
+
+Q.3) Print the names and ages of each employee who works in both the IR department 
+and the Development:
+
+mysql> select E.name , E.age from emp E,works W1,works W2, dept D1,dept D2 where E.emp_id=W1.emp_id AND W1.dept_id =D1.dept_id AND D1.d_name='Hardware'
+ AND E.emp_id=W2.emp_id AND W2.dept_id=D2.dept_id AND D2.d_name='Software';
++----------------+------+
+| name           | age  |
++----------------+------+
+| Shreya Kute    |   18 |
+| Ketaki Bhosale |   20 |
+| shubham wable  |   22 |
+| Rahul kakade   |   27 |
++----------------+------+
+4 rows in set (0.05 sec)
+
+Q.4) For each department with more than 10 full-time-equivalent employees. (i.e., where 
+the part-time and full-time employees add up to at least that many full time employees), print 
+the work did together with the number of employees that work in that department.
+mysql> select W.dept_id,Count(W.emp_id)from Works W GROUP BY w.dept_id HAVING 10<(SELECT SUM(W1.pct_time) from works W1 where w1.dept_id=W.dept_id);
++---------+-----------------+
+| dept_id | Count(W.emp_id) |
++---------+-----------------+
+|     101 |               6 |
+|     102 |               5 |
+|     103 |               4 |
++---------+-----------------+
+3 rows in set (0.00 sec)
+
+Q.5) Print the name of each employee whose salary exceeds the budget of all of the 
+departments that he or she works in
+update emp SET salary=15000000 where emp_id=2;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select E.name from emp E where E.salary>ALL(select D.budget from dept D , works W where E.emp_id=W.emp_id AND D.dept_id=W.dept_id);
++----------------+
+| name           |
++----------------+
+| Mohit Vyavhare |
++----------------+
+1 row in set (0.04 sec)
+
+Q.6) Find the names of managers who manage the departments with the largest budgets
+-> select e.emp_id, e.name, d.budget
+from emp e JOIN department d
+ on e.emp_id = d.manager_id where max(d.budget);
+
+Q.7)Find the manager_ids of managers who manage only departments with budgets    greater than $1 million.
+
+mysql> Select DISTINCT D.manager_id from dept D where 1000000<ALL(select D2.budget from dept D2 where D2.manager_id=D.manager_id);
++------------+
+| manager_id |
++------------+
+|          1 |
+|          2 |
+|          3 |
++------------+
+3 rows in set (0.04 sec)
+
+
