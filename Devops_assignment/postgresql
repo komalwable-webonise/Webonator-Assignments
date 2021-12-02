@@ -1,0 +1,294 @@
+﻿Steps for postgresql installation creating database and backup:
+Install PostgreSQL and write a database backup script using bash.
+webonise@webonise:~$ sudo apt-get update 
+[sudo] password for webonise: 
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]                                                                                                                  
+Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease                                                                                               
+Hit:4 http://in.archive.ubuntu.com/ubuntu focal InRelease                                                                                                                                                 
+Get:5 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [35.7 kB]                                                                                                               
+Get:6 http://in.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]                                                                                                                                
+Hit:3 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease                                                                                                                             
+Get:7 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [64.5 kB]                                                                                                           
+Get:8 http://in.archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]                                                                                                                              
+Get:9 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,464 B]                                                                                                         
+Get:10 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1,347 kB]                                                                                                                   
+Get:11 http://in.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [564 kB]                                                                                                                      
+Get:12 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [277 kB]                                                                                                              
+Get:13 http://in.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [877 kB]                                                                                                                 
+Get:14 http://in.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [649 kB]                                                                                                                  
+Get:15 http://in.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [357 kB]                                                                                                          
+Get:16 http://in.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]                                                                                                         
+Get:17 http://in.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [10.4 kB]                                                                                                       
+Fetched 4,512 kB in 2min 27s (30.6 kB/s)                                                                                                                                                                  
+Reading package lists... Done
+webonise@webonise:~$ sudo apt-get postgresql postgresql-contrib
+E: Invalid operation postgresql
+webonise@webonise:~$ sudo apt-get install postgresql postgresql-contrib
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libllvm10 libpq5 postgresql-12 postgresql-client-12 postgresql-client-common postgresql-common sysstat
+Suggested packages:
+  postgresql-doc postgresql-doc-12 libjson-perl isag
+The following NEW packages will be installed:
+  libllvm10 libpq5 postgresql postgresql-12 postgresql-client-12 postgresql-client-common postgresql-common postgresql-contrib sysstat
+0 upgraded, 9 newly installed, 0 to remove and 57 not upgraded.
+Need to get 30.6 MB of archives.
+After this operation, 121 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libllvm10 amd64 1:10.0.0-4ubuntu1 [15.3 MB]
+Get:2 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 libpq5 amd64 12.9-0ubuntu0.20.04.1 [117 kB]                                                                                            
+Get:3 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-client-common all 214ubuntu0.1 [28.2 kB]                                                                                    
+Get:4 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-client-12 amd64 12.9-0ubuntu0.20.04.1 [1,047 kB]                                                                            
+Get:5 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-common all 214ubuntu0.1 [169 kB]                                                                                            
+Get:6 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-12 amd64 12.9-0ubuntu0.20.04.1 [13.5 MB]                                                                                    
+Get:7 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql all 12+214ubuntu0.1 [3,924 B]                                                                                               
+Get:8 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-contrib all 12+214ubuntu0.1 [3,932 B]                                                                                       
+Get:9 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 sysstat amd64 12.2.0-2ubuntu0.1 [448 kB]                                                                                               
+Fetched 30.6 MB in 1min 51s (276 kB/s)                                                                                                                                                                    
+Preconfiguring packages ...
+Selecting previously unselected package libllvm10:amd64.
+(Reading database ... 188267 files and directories currently installed.)
+Preparing to unpack .../0-libllvm10_1%3a10.0.0-4ubuntu1_amd64.deb ...
+Unpacking libllvm10:amd64 (1:10.0.0-4ubuntu1) ...
+Selecting previously unselected package libpq5:amd64.
+Preparing to unpack .../1-libpq5_12.9-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking libpq5:amd64 (12.9-0ubuntu0.20.04.1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../2-postgresql-client-common_214ubuntu0.1_all.deb ...
+Unpacking postgresql-client-common (214ubuntu0.1) ...
+Selecting previously unselected package postgresql-client-12.
+Preparing to unpack .../3-postgresql-client-12_12.9-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking postgresql-client-12 (12.9-0ubuntu0.20.04.1) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../4-postgresql-common_214ubuntu0.1_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-common'
+Unpacking postgresql-common (214ubuntu0.1) ...
+Selecting previously unselected package postgresql-12.
+Preparing to unpack .../5-postgresql-12_12.9-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking postgresql-12 (12.9-0ubuntu0.20.04.1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../6-postgresql_12+214ubuntu0.1_all.deb ...
+Unpacking postgresql (12+214ubuntu0.1) ...
+Selecting previously unselected package postgresql-contrib.
+Preparing to unpack .../7-postgresql-contrib_12+214ubuntu0.1_all.deb ...
+Unpacking postgresql-contrib (12+214ubuntu0.1) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../8-sysstat_12.2.0-2ubuntu0.1_amd64.deb ...
+Unpacking sysstat (12.2.0-2ubuntu0.1) ...
+Setting up postgresql-client-common (214ubuntu0.1) ...
+Setting up libpq5:amd64 (12.9-0ubuntu0.20.04.1) ...
+Setting up libllvm10:amd64 (1:10.0.0-4ubuntu1) ...
+Setting up postgresql-client-12 (12.9-0ubuntu0.20.04.1) ...
+update-alternatives: using /usr/share/postgresql/12/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up postgresql-common (214ubuntu0.1) ...
+Adding user postgres to group ssl-cert
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+  en_us
+Removing obsolete dictionary files:
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /lib/systemd/system/postgresql.service.
+Setting up postgresql-12 (12.9-0ubuntu0.20.04.1) ...
+Creating new PostgreSQL cluster 12/main ...
+/usr/lib/postgresql/12/bin/initdb -D /var/lib/postgresql/12/main --auth-local peer --auth-host md5
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_IN".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/12/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Asia/Kolkata
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctlcluster 12 main start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+12  main    5432 down   postgres /var/lib/postgresql/12/main /var/log/postgresql/postgresql-12-main.log
+update-alternatives: using /usr/share/postgresql/12/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Setting up sysstat (12.2.0-2ubuntu0.1) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/sysstat.service → /lib/systemd/system/sysstat.service.
+Setting up postgresql-contrib (12+214ubuntu0.1) ...
+Setting up postgresql (12+214ubuntu0.1) ...
+Processing triggers for systemd (245.4-4ubuntu3.13) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+webonise@webonise:~$ apt show postgresql
+Package: postgresql
+Version: 12+214ubuntu0.1
+Priority: optional
+Section: database
+Source: postgresql-common (214ubuntu0.1)
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian PostgreSQL Maintainers <team+postgresql@tracker.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 67.6 kB
+Depends: postgresql-12
+Suggests: postgresql-doc
+Task: postgresql-server
+Download-Size: 3,924 B
+APT-Manual-Installed: yes
+APT-Sources: http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+Description: object-relational SQL database (supported version)
+ This metapackage always depends on the currently supported PostgreSQL
+ database server version.
+ .
+ PostgreSQL is a fully featured object-relational database management
+ system.  It supports a large part of the SQL standard and is designed
+ to be extensible by users in many aspects.  Some of the features are:
+ ACID transactions, foreign keys, views, sequences, subqueries,
+ triggers, user-defined types and functions, outer joins, multiversion
+ concurrency control.  Graphical user interfaces and bindings for many
+ programming languages are available as well.
+
+N: There is 1 additional record. Please use the '-a' switch to see it
+webonise@webonise:~$ ls /etc/postgresql/12/main/
+conf.d  environment  pg_ctl.conf  pg_hba.conf  pg_ident.conf  postgresql.conf  start.conf
+webonise@webonise:~$ service postgresql
+Usage: /etc/init.d/postgresql {start|stop|restart|reload|force-reload|status} [version ..]
+webonise@webonise:~$ service postgresql status
+● postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Sun 2021-11-28 18:51:11 IST; 12min ago
+   Main PID: 4988 (code=exited, status=0/SUCCESS)
+      Tasks: 0 (limit: 18774)
+     Memory: 0B
+     CGroup: /system.slice/postgresql.service
+
+Nov 28 18:51:11 webonise systemd[1]: Starting PostgreSQL RDBMS...
+Nov 28 18:51:11 webonise systemd[1]: Finished PostgreSQL RDBMS.
+webonise@webonise:~$ sudo su postgress
+[sudo] password for webonise: 
+su: user postgress does not exist
+webonise@webonise:~$ sudo su postgres
+postgres@webonise:/home/webonise$ psql
+psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# \l
+                             List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+-----------+----------+----------+---------+-------+-----------------------
+ postgres  | postgres | UTF8     | en_IN   | en_IN | 
+ template0 | postgres | UTF8     | en_IN   | en_IN | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_IN   | en_IN | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+(3 rows)
+
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+postgres=# create user user_1 with password 'test123';
+CREATE ROLE
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ user_1    |                                                            | {}
+
+postgres=# alter user user_1 with superuser;
+ALTER ROLE
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ user_1    | Superuser                                                  | {}
+
+postgres=# man psql
+postgres-# ^C
+postgres=# 
+
+webonise@webonise:~$ sudo -u postgres psql
+[sudo] password for webonise: 
+psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# create databse mydb3;
+ERROR:  syntax error at or near "databse"
+LINE 1: create databse mydb3;
+               ^
+postgres=# create database mydb3;
+CREATE DATABASE
+postgres=# \l
+                             List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+-----------+----------+----------+---------+-------+-----------------------
+ mydb3     | postgres | UTF8     | en_IN   | en_IN | 
+ postgres  | postgres | UTF8     | en_IN   | en_IN | 
+ template0 | postgres | UTF8     | en_IN   | en_IN | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_IN   | en_IN | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c mydb3;
+You are now connected to database "mydb3" as user "postgres".
+mydb3=# create schema mydb3schema;
+CREATE SCHEMA
+mydb3=# create table mydb3schema.table1 (id integer, password char(10));
+CREATE TABLE
+mydb3=# select * from pg_catalog.pg_tables;
+mydb3=# select * from pg_catalog.pg_tables where schemaname!='information_schema' and schemaname != 'pg_catalog';
+ schemaname  | tablename | tableowner | tablespace | hasindexes | hasrules | hastriggers | rowsecurity 
+-------------+-----------+------------+------------+------------+----------+-------------+-------------
+ mydb3schema | table1    | postgres   |            | f          | f        | f           | f
+(1 row)
+
+mydb3=# insert into mydb3schema.table1 values(1.'1');
+ERROR:  syntax error at or near "'1'"
+LINE 1: insert into mydb3schema.table1 values(1.'1');
+                                                ^
+mydb3=# insert into mydb3schema.table1 values(1,'1');
+INSERT 0 1
+mydb3=# insert into mydb3schema.table1 values(2,'2');
+INSERT 0 1
+mydb3=# insert into mydb3schema.table1 values(3,'3');
+INSERT 0 1
+mydb3=# select * from mydb3schema.table1;
+ id |  password  
+----+------------
+  1 | 1         
+  2 | 2         
+  3 | 3         
+(3 rows)
+webonise@webonise:~$ pg_dump -Fc -h 127.0.0.1 -U postgres db111 -f db111.dump
+Password: 
+webonise@webonise:~$ ls -la
+total 124
+drwxr-xr-x 20 webonise webonise 4096 Nov 28 20:12 .
+drwxr-xr-x  3 root     root     4096 Nov 17 16:29 ..
+-rw-------  1 webonise webonise  700 Nov 28 19:56 .bash_history
+-rw-r--r--  1 webonise webonise  220 Nov 17 16:29 .bash_logout
+-rw-r--r--  1 webonise webonise 3771 Nov 17 16:29 .bashrc
+drwxrwxr-x 20 webonise webonise 4096 Nov 28 19:32 .cache
+drwx------ 20 webonise webonise 4096 Nov 28 20:09 .config
+-rw-rw-r--  1 webonise webonise  868 Nov 28 20:15 db111.dump
+-rw-rw-r--  1 webonise webonise 8669 Nov 27 23:03 designpattern
+drwxr-xr-x  3 webonise webonise 4096 Nov 22 16:50 Desktop
+drwxr-xr-x  3 webonise webonise 4096 Nov 22 16:56 Documents
+
+

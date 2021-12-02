@@ -1,0 +1,486 @@
+﻿Steps:
+webonise@webonise:~$ mysql
+
+Command 'mysql' not found, but can be installed with:
+
+sudo apt install mysql-client-core-8.0     # version 8.0.27-0ubuntu0.20.04.1, or
+sudo apt install mariadb-client-core-10.3  # version 1:10.3.31-0ubuntu0.20.04.1
+
+webonise@webonise:~$ sudo apt update
+[sudo] password for webonise: 
+Hit:1 http://in.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://in.archive.ubuntu.com/ubuntu focal-updates InRelease              
+Hit:3 http://in.archive.ubuntu.com/ubuntu focal-backports InRelease            
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Hit:5 http://ppa.launchpad.net/ondrej/php/ubuntu focal InRelease               
+Hit:6 http://packages.microsoft.com/repos/code stable InRelease                
+Hit:7 https://dl.google.com/linux/chrome/deb stable InRelease                  
+Hit:8 http://ppa.launchpad.net/rael-gc/rvm/ubuntu focal InRelease              
+Hit:9 https://packagecloud.io/AtomEditor/atom/any any InRelease                
+Hit:10 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
+Fetched 114 kB in 3s (38.7 kB/s)
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+11 packages can be upgraded. Run 'apt list --upgradable' to see them.
+webonise@webonise:~$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following NEW packages will be installed:
+  linux-headers-5.11.0-41-generic linux-hwe-5.11-headers-5.11.0-41
+  linux-image-5.11.0-41-generic linux-modules-5.11.0-41-generic
+  linux-modules-extra-5.11.0-41-generic
+The following packages will be upgraded:
+  libargon2-1 libgd3 libidn2-0 libpcre3 libpcrecpp0v5 libxml2 libxml2-dev
+  libzstd1 linux-generic-hwe-20.04 linux-headers-generic-hwe-20.04
+  linux-image-generic-hwe-20.04
+11 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+3 standard security updates
+Need to get 2,339 kB/95.4 MB of archives.
+After this operation, 494 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libpcre3 amd64 2:8.44-2+ubuntu20.04.1+deb.sury.org+1 [240 kB]
+Get:2 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libidn2-0 amd64 2.3.0-1+ubuntu20.04.1+deb.sury.org+2 [68.7 kB]
+Get:3 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libzstd1 amd64 1.4.8+dfsg-2+ubuntu20.04.1+deb.sury.org+4 [318 kB]
+Get:4 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libargon2-1 amd64 0~20190702-0.1+ubuntu20.04.1+deb.sury.org+1 [19.5 kB]
+Get:5 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libgd3 amd64 2.3.0-2+ubuntu20.04.1+deb.sury.org+1 [135 kB]
+Get:6 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libpcrecpp0v5 amd64 2:8.44-2+ubuntu20.04.1+deb.sury.org+1 [51.0 kB]
+Get:7 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libxml2-dev amd64 2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1 [802 kB]
+Get:8 http://ppa.launchpad.net/ondrej/php/ubuntu focal/main amd64 libxml2 amd64 2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1 [705 kB]
+Fetched 2,339 kB in 19s (123 kB/s)                                             
+(Reading database ... 211240 files and directories currently installed.)
+Preparing to unpack .../libpcre3_2%3a8.44-2+ubuntu20.04.1+deb.sury.org+1_amd64.d
+eb ...
+Unpacking libpcre3:amd64 (2:8.44-2+ubuntu20.04.1+deb.sury.org+1) over (2:8.39-12
+build1) ...
+Setting up libpcre3:amd64 (2:8.44-2+ubuntu20.04.1+deb.sury.org+1) ...
+(Reading database ... 211240 files and directories currently installed.)
+Preparing to unpack .../libidn2-0_2.3.0-1+ubuntu20.04.1+deb.sury.org+2_amd64.deb
+ ...
+Unpacking libidn2-0:amd64 (2.3.0-1+ubuntu20.04.1+deb.sury.org+2) over (2.2.0-2) 
+...
+Setting up libidn2-0:amd64 (2.3.0-1+ubuntu20.04.1+deb.sury.org+2) ...
+(Reading database ... 211263 files and directories currently installed.)
+Preparing to unpack .../libzstd1_1.4.8+dfsg-2+ubuntu20.04.1+deb.sury.org+4_amd64
+.deb ...
+Unpacking libzstd1:amd64 (1.4.8+dfsg-2+ubuntu20.04.1+deb.sury.org+4) over (1.4.4
++dfsg-3ubuntu0.1) ...
+Setting up libzstd1:amd64 (1.4.8+dfsg-2+ubuntu20.04.1+deb.sury.org+4) ...
+(Reading database ... 211263 files and directories currently installed.)
+Preparing to unpack .../00-libargon2-1_0~20190702-0.1+ubuntu20.04.1+deb.sury.org
++1_amd64.deb ...
+Unpacking libargon2-1:amd64 (0~20190702-0.1+ubuntu20.04.1+deb.sury.org+1) over (
+0~20171227-0.2) ...
+Preparing to unpack .../01-libgd3_2.3.0-2+ubuntu20.04.1+deb.sury.org+1_amd64.deb
+ ...
+Unpacking libgd3:amd64 (2.3.0-2+ubuntu20.04.1+deb.sury.org+1) over (2.2.5-5.2ubu
+ntu2.1) ...
+Preparing to unpack .../02-libpcrecpp0v5_2%3a8.44-2+ubuntu20.04.1+deb.sury.org+1
+_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.44-2+ubuntu20.04.1+deb.sury.org+1) over (2:8.
+39-12build1) ...
+Preparing to unpack .../03-libxml2-dev_2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+
+1_amd64.deb ...
+Unpacking libxml2-dev:amd64 (2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1) over (2
+.9.10+dfsg-5ubuntu0.20.04.1) ...
+Preparing to unpack .../04-libxml2_2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1_am
+d64.deb ...
+Unpacking libxml2:amd64 (2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1) over (2.9.1
+0+dfsg-5ubuntu0.20.04.1) ...
+Selecting previously unselected package linux-modules-5.11.0-41-generic.
+Preparing to unpack .../05-linux-modules-5.11.0-41-generic_5.11.0-41.45~20.04.1_
+amd64.deb ...
+Unpacking linux-modules-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Selecting previously unselected package linux-image-5.11.0-41-generic.
+Preparing to unpack .../06-linux-image-5.11.0-41-generic_5.11.0-41.45~20.04.1_am
+d64.deb ...
+Unpacking linux-image-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Selecting previously unselected package linux-modules-extra-5.11.0-41-generic.
+Preparing to unpack .../07-linux-modules-extra-5.11.0-41-generic_5.11.0-41.45~20
+.04.1_amd64.deb ...
+Unpacking linux-modules-extra-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Preparing to unpack .../08-linux-generic-hwe-20.04_5.11.0.41.45~20.04.19_amd64.d
+eb ...
+Unpacking linux-generic-hwe-20.04 (5.11.0.41.45~20.04.19) over (5.11.0.40.44~20.
+04.18) ...
+Preparing to unpack .../09-linux-image-generic-hwe-20.04_5.11.0.41.45~20.04.19_a
+md64.deb ...
+Unpacking linux-image-generic-hwe-20.04 (5.11.0.41.45~20.04.19) over (5.11.0.40.
+44~20.04.18) ...
+Selecting previously unselected package linux-hwe-5.11-headers-5.11.0-41.
+Preparing to unpack .../10-linux-hwe-5.11-headers-5.11.0-41_5.11.0-41.45~20.04.1
+_all.deb ...
+Unpacking linux-hwe-5.11-headers-5.11.0-41 (5.11.0-41.45~20.04.1) ...
+Selecting previously unselected package linux-headers-5.11.0-41-generic.
+Preparing to unpack .../11-linux-headers-5.11.0-41-generic_5.11.0-41.45~20.04.1_
+amd64.deb ...
+Unpacking linux-headers-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Preparing to unpack .../12-linux-headers-generic-hwe-20.04_5.11.0.41.45~20.04.19
+_amd64.deb ...
+Unpacking linux-headers-generic-hwe-20.04 (5.11.0.41.45~20.04.19) over (5.11.0.4
+0.44~20.04.18) ...
+Setting up libpcrecpp0v5:amd64 (2:8.44-2+ubuntu20.04.1+deb.sury.org+1) ...
+Setting up libargon2-1:amd64 (0~20190702-0.1+ubuntu20.04.1+deb.sury.org+1) ...
+Setting up libgd3:amd64 (2.3.0-2+ubuntu20.04.1+deb.sury.org+1) ...
+Setting up linux-hwe-5.11-headers-5.11.0-41 (5.11.0-41.45~20.04.1) ...
+Setting up libxml2:amd64 (2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1) ...
+Setting up libxml2-dev:amd64 (2.9.12+dfsg-0+ubuntu20.04.1+deb.sury.org+1) ...
+Setting up linux-headers-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Setting up linux-headers-generic-hwe-20.04 (5.11.0.41.45~20.04.19) ...
+Setting up linux-image-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+I: /boot/vmlinuz.old is now a symlink to vmlinuz-5.11.0-40-generic
+I: /boot/initrd.img.old is now a symlink to initrd.img-5.11.0-40-generic
+I: /boot/vmlinuz is now a symlink to vmlinuz-5.11.0-41-generic
+I: /boot/initrd.img is now a symlink to initrd.img-5.11.0-41-generic
+Setting up linux-modules-extra-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Setting up linux-modules-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+Setting up linux-image-generic-hwe-20.04 (5.11.0.41.45~20.04.19) ...
+Setting up linux-generic-hwe-20.04 (5.11.0.41.45~20.04.19) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for linux-image-5.11.0-41-generic (5.11.0-41.45~20.04.1) ...
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-5.11.0-41-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p1
+I: (UUID=6e1e8980-eec3-420f-913d-96895c7ccd4d)
+I: Set the RESUME variable to override this.
+/etc/kernel/postinst.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/init-select.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.11.0-41-generic
+Found initrd image: /boot/initrd.img-5.11.0-41-generic
+Found linux image: /boot/vmlinuz-5.11.0-40-generic
+Found initrd image: /boot/initrd.img-5.11.0-40-generic
+Found linux image: /boot/vmlinuz-5.11.0-27-generic
+Found initrd image: /boot/initrd.img-5.11.0-27-generic
+Adding boot menu entry for UEFI Firmware Settings
+done
+webonise@webonise:~$ sudo apt install mysql-server
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-5.11.0-27-generic linux-hwe-5.11-headers-5.11.0-27
+  linux-image-5.11.0-27-generic linux-modules-5.11.0-27-generic
+  linux-modules-extra-5.11.0-27-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libaio1 libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7
+  libevent-pthreads-2.1-7 libfcgi-perl libhtml-template-perl libmecab2
+  mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client-8.0
+  mysql-client-core-8.0 mysql-server-8.0 mysql-server-core-8.0
+Suggested packages:
+  libipc-sharedcache-perl mailx tinyca
+The following NEW packages will be installed:
+  libaio1 libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7
+  libevent-pthreads-2.1-7 libfcgi-perl libhtml-template-perl libmecab2
+  mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client-8.0
+  mysql-client-core-8.0 mysql-server mysql-server-8.0 mysql-server-core-8.0
+0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
+Need to get 31.5 MB of archives.
+After this operation, 262 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client-core-8.0 amd64 8.0.27-0ubuntu0.20.04.1 [4,423 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client-8.0 amd64 8.0.27-0ubuntu0.20.04.1 [22.0 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libaio1 amd64 0.3.112-5 [7,184 B]
+Get:4 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libevent-core-2.1-7 amd64 2.1.11-stable-1 [89.1 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libevent-pthreads-2.1-7 amd64 2.1.11-stable-1 [7,372 B]
+Get:6 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libmecab2 amd64 0.996-10build1 [233 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-server-core-8.0 amd64 8.0.27-0ubuntu0.20.04.1 [18.4 MB]
+Get:8 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-server-8.0 amd64 8.0.27-0ubuntu0.20.04.1 [1,313 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libcgi-pm-perl all 4.46-1 [186 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libfcgi-perl amd64 0.79-1 [33.1 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libcgi-fast-perl all 1:2.15-1 [10.5 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu focal/main amd64 libhtml-template-perl all 2.97-1 [59.0 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu focal/main amd64 mecab-utils amd64 0.996-10build1 [4,912 B]
+Get:14 http://in.archive.ubuntu.com/ubuntu focal/main amd64 mecab-ipadic all 2.7.0-20070801+main-2.1 [6,714 kB]
+Get:15 http://in.archive.ubuntu.com/ubuntu focal/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-2.1 [4,380 B]
+Get:16 http://in.archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-server all 8.0.27-0ubuntu0.20.04.1 [9,548 B]
+Fetched 31.5 MB in 42s (743 kB/s)                                              
+Preconfiguring packages ...
+Selecting previously unselected package mysql-client-core-8.0.
+(Reading database ... 249586 files and directories currently installed.)
+Preparing to unpack .../00-mysql-client-core-8.0_8.0.27-0ubuntu0.20.04.1_amd64.d
+eb ...
+Unpacking mysql-client-core-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../01-mysql-client-8.0_8.0.27-0ubuntu0.20.04.1_amd64.deb ..
+.
+Unpacking mysql-client-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../02-libaio1_0.3.112-5_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.112-5) ...
+Selecting previously unselected package libevent-core-2.1-7:amd64.
+Preparing to unpack .../03-libevent-core-2.1-7_2.1.11-stable-1_amd64.deb ...
+Unpacking libevent-core-2.1-7:amd64 (2.1.11-stable-1) ...
+Selecting previously unselected package libevent-pthreads-2.1-7:amd64.
+Preparing to unpack .../04-libevent-pthreads-2.1-7_2.1.11-stable-1_amd64.deb ...
+Unpacking libevent-pthreads-2.1-7:amd64 (2.1.11-stable-1) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../05-libmecab2_0.996-10build1_amd64.deb ...
+Unpacking libmecab2:amd64 (0.996-10build1) ...
+Selecting previously unselected package mysql-server-core-8.0.
+Preparing to unpack .../06-mysql-server-core-8.0_8.0.27-0ubuntu0.20.04.1_amd64.d
+eb ...
+Unpacking mysql-server-core-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Selecting previously unselected package mysql-server-8.0.
+Preparing to unpack .../07-mysql-server-8.0_8.0.27-0ubuntu0.20.04.1_amd64.deb ..
+.
+Unpacking mysql-server-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../08-libcgi-pm-perl_4.46-1_all.deb ...
+Unpacking libcgi-pm-perl (4.46-1) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../09-libfcgi-perl_0.79-1_amd64.deb ...
+Unpacking libfcgi-perl (0.79-1) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../10-libcgi-fast-perl_1%3a2.15-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.15-1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../11-libhtml-template-perl_2.97-1_all.deb ...
+Unpacking libhtml-template-perl (2.97-1) ...
+Selecting previously unselected package mecab-utils.
+Preparing to unpack .../12-mecab-utils_0.996-10build1_amd64.deb ...
+Unpacking mecab-utils (0.996-10build1) ...
+Selecting previously unselected package mecab-ipadic.
+Preparing to unpack .../13-mecab-ipadic_2.7.0-20070801+main-2.1_all.deb ...
+Unpacking mecab-ipadic (2.7.0-20070801+main-2.1) ...
+Selecting previously unselected package mecab-ipadic-utf8.
+Preparing to unpack .../14-mecab-ipadic-utf8_2.7.0-20070801+main-2.1_all.deb ...
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-2.1) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../15-mysql-server_8.0.27-0ubuntu0.20.04.1_all.deb ...
+Unpacking mysql-server (8.0.27-0ubuntu0.20.04.1) ...
+Setting up libmecab2:amd64 (0.996-10build1) ...
+Setting up mysql-client-core-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Setting up libcgi-pm-perl (4.46-1) ...
+Setting up libhtml-template-perl (2.97-1) ...
+Setting up mecab-utils (0.996-10build1) ...
+Setting up libevent-core-2.1-7:amd64 (2.1.11-stable-1) ...
+Setting up mysql-client-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Setting up libfcgi-perl (0.79-1) ...
+Setting up libaio1:amd64 (0.3.112-5) ...
+Setting up libevent-pthreads-2.1-7:amd64 (2.1.11-stable-1) ...
+Setting up mecab-ipadic (2.7.0-20070801+main-2.1) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/d
+ic/debian (mecab-dictionary) in auto mode
+Setting up libcgi-fast-perl (1:2.15-1) ...
+Setting up mysql-server-core-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-2.1) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/me
+cab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-server-8.0 (8.0.27-0ubuntu0.20.04.1) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my
+.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+mysqld will log errors to /var/log/mysql/error.log
+mysqld is running as pid 12687
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib
+/systemd/system/mysql.service.
+Setting up mysql-server (8.0.27-0ubuntu0.20.04.1) ...
+Processing triggers for systemd (245.4-4ubuntu3.13) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+webonise@webonise:~$ mysql --v
+mysql: [ERROR] unknown option '--v'.
+webonise@webonise:~$ mysql -v
+ERROR 1045 (28000): Access denied for user 'webonise'@'localhost' (using password: NO)
+webonise@webonise:~$ mysql --version
+mysql  Ver 8.0.27-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))
+webonise@webonise:~$ sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Connecting to MySQL using a blank password.
+
+VALIDATE PASSWORD COMPONENT can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD component?
+
+Press y|Y for Yes, any other key for No: y
+
+There are three levels of password validation policy:
+
+LOW    Length >= 8
+MEDIUM Length >= 8, numeric, mixed case, and special characters
+STRONG Length >= 8, numeric, mixed case, special characters and dictionary                  file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 0
+Please set the password for root here.
+
+New password: 
+
+Re-enter new password: 
+
+Estimated strength of the password: 25 
+Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+
+Normally, root should only be allowed to connect from
+'localhost'. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : n
+
+ ... skipping.
+By default, MySQL comes with a database named 'test' that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) : n
+
+ ... skipping.
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+All done! 
+webonise@webonise:~$ 
+
+webonise@webonise:~$ sudo mysql -u root
+[sudo] password for webonise: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> create database weboniselab;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| weboniselab        |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+webonise@webonise:/etc/nginx/sites-enabled$ sudo mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database weboniselab;
+ERROR 1007 (HY000): Can't create database 'weboniselab'; database exists
+mysql> create database webonise;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> create user "komal"@"localhost" identified by "komal@W123";
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> grant all privileges on wordpress.* to "komal"@"localhost";
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> exit
+Bye
+
