@@ -1,0 +1,179 @@
+
+h1{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 80px;
+}
+body{
+    font-size: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar{
+    height: 40px;
+    background-color: #3355aa;
+    font-size: 15px;    
+    
+    
+}
+.container-1,.container-2{
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+
+.container-1 li{
+    list-style-type: none;
+    margin-left:none;
+    float: left;
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.container-1 li a{
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+}
+button{
+    background-color: #3355a3;
+    color: white;
+}
+
+#first-div{
+    margin-top: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#card1{
+    width: 530px;
+}
+#card1 .image{
+    padding: 10px;
+}
+#card1 img{
+    height: 300px;
+    width: 525px;
+}
+.card-body-2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.card-body-2 label{
+    display: block;
+    text-align: center;
+}
+.main .image-detail{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+}
+
+h2{
+    font-size: 17px !important;
+    color: #3355aa;
+}
+#col2,#col3{
+    padding: 10px;
+}
+p{
+    font-style: italic;
+}
+.para .sub-p{
+    font-size: 10px;
+}
+
+.header-1{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.fake-box{
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+
+}
+.fake-box .box-title{
+    margin-top: 20px;
+    font-size: 16px;
+}
+.card{
+    height: 400px;
+    
+}
+.card-title{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 40px;
+    font-size: 16px !important;
+    color: #3355aa;
+    text-align: center;
+
+
+}
+.card-text{
+    height: 305px;
+    padding: 5px;
+    background-color: rgba(221, 221, 221, 0.863);
+}
+
+hr.line{
+    border-top: 5px solid hsl(54, 100%, 50%);
+}
+
+
+.container-3 li{
+    list-style-type: none;
+    margin-top: 15px;
+    float: left;
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.container-3 li a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+.container-4 {
+    margin-right: 15px;
+}
+.container-4 li{
+    list-style-type: none;
+    margin-top: 15px;
+    float: right;
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.container-4 li a{
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+#final{
+    margin-top: 15px;
+    color: white;
+}
+
+vertical-line{
+    border-right: 1px solid rgb(202, 195, 195);
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+vertical-line1{
+    border-right: 1px solid rgb(2, 32, 131);
+    margin-left: 15px;
+    margin-right: 15px;
+}
+

@@ -1,0 +1,114 @@
+
+LEGION@Shubham MINGW64 ~
+$ git --version
+git version 2.31.1.windows.1
+
+LEGION@Shubham MINGW64 ~
+$ git config --global user.name "Komal Wable"
+
+LEGION@Shubham MINGW64 ~
+$ git config --global user.email "komal.wable@weboniselab.com"
+
+LEGION@Shubham MINGW64 ~
+$ git config --global user.email
+komal.wable@weboniselab.com
+
+LEGION@Shubham MINGW64 ~
+$ mkdir Webonator-Assignments
+
+LEGION@Shubham MINGW64 ~
+$ cd Webonator-Assignments
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments
+$ git init
+Initialized empty Git repository in C:/Users/LEGION/Webonator-Assignments/.git/
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ ls
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ ls -a
+./  ../  .git/
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Agile activity and assignment.txt
+        gitAssignment.txt
+        oops.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git add  'Agile activity and assignment.txt'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git add  'gitAssignment.txt'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git add  'oops.cpp'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:git
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Agile activity and assignment.txt
+        new file:   gitAssignment.txt
+        new file:   oops.cpp
+
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git commit -m 'intial commit'
+[master (root-commit) e003378] intial commit
+ 3 files changed, 195 insertions(+)
+ create mode 100644 Agile activity and assignment.txt
+ create mode 100644 gitAssignment.txt
+ create mode 100644 oops.cpp
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git log
+commit e0033784f9d20911741c8dfd04bd5bd8fd6f8857 (HEAD -> master)
+Author: Komal Wable <komal.wable@weboniselab.com>
+Date:   Mon Nov 22 17:40:28 2021 +0530
+
+    intial commit
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$
+ git branch develop
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git branch testing
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git branch staging
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (develop)
+$ git branch feature
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (develop)
+$ git checkout feature
+Switched to branch 'feature'
+
+LEGION@Shubham MINGW64 ~/Webonator-Assignments (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
