@@ -216,8 +216,8 @@ mysql> select* from works;
  
 
 
-Q.3) Print the names and ages of each employee who works in both the IR department 
-and the Development:
+Q.3) Print the names and ages of each employee who works in both the Hardware department and the Software department.
+
 
 mysql> select E.name , E.age from emp E,works W1,works W2, dept D1,dept D2 where E.emp_id=W1.emp_id AND W1.dept_id =D1.dept_id AND D1.d_name='Hardware'
  AND E.emp_id=W2.emp_id AND W2.dept_id=D2.dept_id AND D2.d_name='Software';
